@@ -17,7 +17,7 @@ import {
     logout,
     updateProfile,
 } from "../controllers/authControllers.js"
-import authendicatedUser from './../middleware/auth.middleware.js'
+import {authendicatedUser} from './../middleware/auth.middleware.js'
 const router = express.Router()
 
 

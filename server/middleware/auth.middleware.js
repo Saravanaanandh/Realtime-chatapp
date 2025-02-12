@@ -4,7 +4,7 @@
 import jwt from 'jsonwebtoken'
 import User from  '../model/User.js'
 
-export const verifyJWT = async (req, res, next)=>{
+export const authendicatedUser = async (req, res, next)=>{
     const cookies = req.cookies
     if(!cookies?.jwt)   return res.status(403).json({message:'Invalid token!'})
     
