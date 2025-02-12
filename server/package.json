@@ -9,7 +9,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "ISC", 
+  "type": "commonjs", 
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
