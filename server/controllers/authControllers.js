@@ -4,7 +4,7 @@
 import cloudinary from './../config/cloudinary.js'
 import User from '../model/User.js'
 
-const signUp = async(req, res)=>{ 
+export const signUp = async(req, res)=>{ 
     const {username, email, password} = req.body
     if(!username || !email || !password) return res.status(400).json({message:'please provide username, email and password'})
 
@@ -18,7 +18,7 @@ const signUp = async(req, res)=>{
     res.status(201).json(user)
 }
 
-const login = async(req, res)=>{
+export const login = async(req, res)=>{
     const {email, password} = req.body
     if(!email || !password) return res.status(400).json({message:'please provide email and password'})
 
@@ -33,7 +33,7 @@ const login = async(req, res)=>{
     res.status(200).json(user)
 }
 
-const logout = async(req, res)=>{
+export const logout = async(req, res)=>{
     const {email} = req.user
     const user = await User.findOne({email})
     user.token = ""
@@ -41,7 +41,7 @@ const logout = async(req, res)=>{
     res.status(204).json(user)
 }
 
-const updateProfile = async (req, res)=>{
+export const updateProfile = async (req, res)=>{
     const {profilePic} = req.body
     const userId = req.user._id
     if(!profilePic) return res.status(400).json({message:'profile picture is required'})
@@ -50,18 +50,18 @@ const updateProfile = async (req, res)=>{
     res.status(200).json(updatedUser)
 }
 
-const checkAuth = async (req, res)=>{
+export const checkAuth = async (req, res)=>{
     if(!req.user) return res.status(401).json({message:'unauthorized user'})
     res.status(200).json(req.user)
 }
 
-export default {
-    signUp,
-    login,
-    logout,
-    updateProfile,
-    checkAuth
-}
+// export default {
+//     signUp,
+//     login,
+//     logout,
+//     updateProfile,
+//     checkAuth,
+// }
 
 // module.exports = {
 //     signUp,

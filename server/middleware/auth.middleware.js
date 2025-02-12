@@ -4,7 +4,7 @@
 import jwt from 'jsonwebtoken'
 import User from  '../model/User.js'
 
-const verifyJWT = async (req, res, next)=>{
+export const verifyJWT = async (req, res, next)=>{
     const cookies = req.cookies
     if(!cookies?.jwt)   return res.status(403).json({message:'Invalid token!'})
     
@@ -21,5 +21,5 @@ const verifyJWT = async (req, res, next)=>{
     next()
 }
 
-export default verifyJWT
+// export default verifyJWT
 // module.exports = verifyJWT

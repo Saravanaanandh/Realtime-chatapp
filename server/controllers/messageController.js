@@ -8,7 +8,7 @@ import Message from "../model/Message.js"
 import cloudinary from './../config/cloudinary.js'
 import {io,getReceiverSocketId } from "../config/socket.js"
 
-const getAllUser = async(req, res)=>{ 
+export const getAllUser = async(req, res)=>{ 
     try{
         const loggedId = req.user._id
         const users = await User.find({_id:{$ne:loggedId}}).select('-password')
@@ -18,7 +18,7 @@ const getAllUser = async(req, res)=>{
     }
 }
 
-const getMessage = async(req, res)=>{
+export const getMessage = async(req, res)=>{
     const myId = req.user._id
     const {id:receiverId} = req.params
 
@@ -31,7 +31,7 @@ const getMessage = async(req, res)=>{
 
     res.status(200).json(messages)
 }
-const sendMessage = async(req, res)=>{
+export const sendMessage = async(req, res)=>{
     const {text, image} = req.body
 
     const senderId = req.user._id
@@ -61,11 +61,11 @@ const sendMessage = async(req, res)=>{
     }
 } 
 
-export default {
-    getAllUser,
-    getMessage,
-    sendMessage
-}
+// export default {
+//     getAllUser,
+//     getMessage,
+//     sendMessage,
+// }
 // module.exports = {
 //     getAllUser,
 //     getMessage,

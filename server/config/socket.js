@@ -18,7 +18,7 @@ const io = new Server(server,{
 
 const userSocket = {}
 
-const getReceiverSocketId = (userId)=>{
+export const getReceiverSocketId = (userId)=>{
     return userSocket[userId]
 }
 
@@ -37,7 +37,7 @@ io.on("connection",(socket)=>{
     })
 })
 
-export default {
-    io, app, server,getReceiverSocketId
+export {
+    io, app, server
 }
 // module.exports = {io, app, server,getReceiverSocketId}

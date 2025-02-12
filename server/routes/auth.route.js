@@ -11,11 +11,11 @@
 
 import express from 'express' 
 import {
+    checkAuth,
     signUp,
     login,
     logout,
     updateProfile,
-    checkAuth
 } from "../controllers/authControllers.js"
 import authendicatedUser from './../middleware/auth.middleware.js'
 const router = express.Router()

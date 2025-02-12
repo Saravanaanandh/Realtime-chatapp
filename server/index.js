@@ -16,7 +16,7 @@
 const PORT = process.env.PORT || 5000
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import connectDB from './config/dbConn.js'
+import {connectDB} from './config/dbConn.js'
 import express from 'express'
 import path from 'path'
 import authRoutes from './routes/auth.route.js'
