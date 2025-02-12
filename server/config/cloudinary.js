@@ -1,5 +1,10 @@
-const {v2} = require('cloudinary')
-require('dotenv').config()
+// const {v2} = require('cloudinary')
+// require('dotenv').config()
+
+import {v2} from 'cloudinary'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 v2.config({
     cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
@@ -8,4 +13,5 @@ v2.config({
 
 })
 
-module.exports = v2
+export default v2
+// module.exports = v2

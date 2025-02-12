@@ -1,7 +1,12 @@
-const User = require("../model/User.js")
-const Message = require("../model/Message.js")
-const cloudinary = require('./../config/cloudinary.js')
-const { io,getReceiverSocketId } = require("../config/socket.js")
+// const User = require("../model/User.js")
+// const Message = require("../model/Message.js")
+// const cloudinary = require('./../config/cloudinary.js')
+// const { io,getReceiverSocketId } = require("../config/socket.js")
+
+import User from "../model/User.js"
+import Message from "../model/Message.js"
+import cloudinary from './../config/cloudinary.js'
+import {io,getReceiverSocketId } from "../config/socket.js"
 
 const getAllUser = async(req, res)=>{ 
     try{
@@ -56,8 +61,13 @@ const sendMessage = async(req, res)=>{
     }
 } 
 
-module.exports = {
+export default {
     getAllUser,
     getMessage,
     sendMessage
 }
+// module.exports = {
+//     getAllUser,
+//     getMessage,
+//     sendMessage
+// }

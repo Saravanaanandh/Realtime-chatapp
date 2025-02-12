@@ -1,5 +1,8 @@
-const jwt = require('jsonwebtoken')
-const User = require('../model/User.js')
+// const jwt = require('jsonwebtoken')
+// const User = require('../model/User.js')
+
+import jwt from 'jsonwebtoken'
+import User from  '../model/User.js'
 
 const verifyJWT = async (req, res, next)=>{
     const cookies = req.cookies
@@ -18,4 +21,5 @@ const verifyJWT = async (req, res, next)=>{
     next()
 }
 
-module.exports = verifyJWT
+export default verifyJWT
+// module.exports = verifyJWT

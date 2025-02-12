@@ -1,6 +1,9 @@
 
-const cloudinary = require('./../config/cloudinary.js')
-const User = require('../model/User.js')
+// const cloudinary = require()
+// const User = require()
+import cloudinary from './../config/cloudinary.js'
+import User from '../model/User.js'
+
 const signUp = async(req, res)=>{ 
     const {username, email, password} = req.body
     if(!username || !email || !password) return res.status(400).json({message:'please provide username, email and password'})
@@ -52,10 +55,18 @@ const checkAuth = async (req, res)=>{
     res.status(200).json(req.user)
 }
 
-module.exports = {
+export default {
     signUp,
     login,
     logout,
     updateProfile,
     checkAuth
 }
+
+// module.exports = {
+//     signUp,
+//     login,
+//     logout,
+//     updateProfile,
+//     checkAuth
+// }
