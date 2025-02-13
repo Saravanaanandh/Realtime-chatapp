@@ -7,7 +7,7 @@ import SendMessage from "./SendMessage.jsx"
 import defaultImg from "./../assets/user.png"
 import { timeFormatType } from "./timeFormatType.jsx"
 import './../App.css'
-import { useState} from "react"
+// import { useState} from "react"
 
 
 const Chat = () => {
@@ -37,24 +37,14 @@ const Chat = () => {
   //   window.addEventListener("resize", handleResize);
   //   return () => window.removeEventListener("resize", handleResize);
   // }, []);
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setViewportHeight(window.visualViewport?.height || window.innerHeight);
-    };
-
-    window.visualViewport?.addEventListener("resize", handleResize);
-    return () => window.visualViewport?.removeEventListener("resize", handleResize);
-  }, []);
 
 
   return (
-    <div className={`w-full h-full flex flex-col justify-between`}>
+    <div className="w-full h-full flex flex-col justify-between">
       <div className="">
         <ChatHeader /> 
       </div>
-      <div className={`h-${viewportHeight} overflow-auto`}>
+      <div className="h-full overflow-y-scroll">
         {/* max-sm:h-[23.4rem] */}
         <div className={`w-full h-full  space-y-1 px-2 mt-1 max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
           {
