@@ -79,7 +79,7 @@ const SendMessage = () => {
             )}
 
         </div>
-        <form className="w-full  bg-gray-600 flex h-7 gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
+        <form className="w-full  bg-gray-600 flex h-[4vh] gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
             <div>
                 <button
                     type='button'
@@ -102,7 +102,7 @@ const SendMessage = () => {
                 }
             </div>
             <input 
-                className="w-full outline-none border-none text-white py-0.5 max-sm:text-[10px]"
+                className="w-full outline-none border-none text-white py-0.5 max-sm:text-[12px]"
                 type="text" 
                 ref={inputRef}
                 placeholder="Type something to send..."

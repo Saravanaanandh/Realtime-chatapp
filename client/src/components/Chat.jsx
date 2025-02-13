@@ -46,13 +46,13 @@ const Chat = () => {
       </div>
       <div className="h-full overflow-y-scroll">
         {/* max-sm:h-[23.4rem] */}
-        <div className={`w-full h-full  space-y-1 px-2 mt-1 max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
+        <div className={`w-full h-[79vh] space-y-1 px-2 mt-1 max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
           {
             messages.map(message => (
               message.senderId === authUser._id ? (
               <div
                 key={message._id}
-                className= "flex flex-col items-end overflow-y-scroll" 
+                className= "flex flex-col items-end" 
               >
                 <div
                   className="flex gap-1"
