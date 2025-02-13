@@ -44,7 +44,7 @@ const Chat = () => {
   return (
     <div className="w-full flex flex-col justify-between">
       <ChatHeader/>
-      <div className="h-full overflow-y-scroll">
+      <div className="h-full overflow-y-auto">
         
       <div className={`w-full h-${windowHeight} overflow-y-scroll space-y-1 px-2 mt-1  max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
         {
