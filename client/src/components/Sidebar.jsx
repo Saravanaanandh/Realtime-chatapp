@@ -16,7 +16,7 @@ const Sidebar = () => {
     },[getUsers])
 
   return (
-    <div className="min-w-8 h-full sm:w-40 md:w-50 flex flex-col gap-3 bg-gray-900 border-[1px] border-blue-400 rounded-bl-md rounded-tl-md border-r-0">
+    <div className="min-w-8 h-full sm:w-40 md:w-50 flex flex-col gap-3 bg-gray-900 ">
         <div className="flex ml-4 mt-4 text-blue-400 max-sm:ml-3 items-center"> 
             <User2 className="size-4 md:size-5"/><span className="hidden sm:block sm:text-[12px] md:block">&nbsp;Users</span>
         </div> 
