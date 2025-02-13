@@ -8,9 +8,10 @@ const HomePage = () => {
  
   const {selectedUser} = useChatStore()
   
+  
   return (
-    <div className="flex items-center justify-center w-full h-screen  bg-gray-900 py-5 ">
-      <div  className="max-w-[900px] h-full flex flex-1 mx-5 bg-gray-800 rounded-2xl border-[1px] border-blue-400  rounded-bl-md rounded-tl-md">
+    <div className={`flex items-center justify-center w-full h-full bg-gray-900 py-5`}>
+      <div  className={`max-w-[900px] h-full flex flex-1 mx-5 bg-gray-800 rounded-2xl border-[1px] border-blue-400  rounded-bl-md rounded-tl-md`}>
         <div className="flex flex-col h-full overflow-y-scroll" id="sidebar">
           <Sidebar/>
         </div>

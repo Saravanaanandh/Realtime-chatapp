@@ -7,6 +7,8 @@ import SendMessage from "./SendMessage.jsx"
 import defaultImg from "./../assets/user.png"
 import { timeFormatType } from "./timeFormatType.jsx"
 import './../App.css'
+import { useState} from "react"
+
 
 const Chat = () => {
 
@@ -27,13 +29,24 @@ const Chat = () => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   },[messages])
 
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => setWindowHeight(window.innerHeight);
+    
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   console.log(messages)
 
   return (
     <div className="w-full flex flex-col justify-between">
       <ChatHeader/>
-      <div className="w-full h-full overflow-y-scroll space-y-1 px-2 mt-1  max-sm:text-[10px]" id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
+      <div className="h-full overflow-y-scroll">
+        
+      <div className={`w-full h-${windowHeight} overflow-y-scroll space-y-1 px-2 mt-1  max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
         {
           messages.map(message => (
             message.senderId === authUser._id ? (
@@ -111,6 +124,7 @@ const Chat = () => {
           ))
         }
         <div ref={messageEndRef}/>
+      </div>
       </div>
       <SendMessage />
     </div>
