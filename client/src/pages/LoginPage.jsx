@@ -27,17 +27,17 @@ const LoginPage = () => {
     if(success === true) login(formData)  
   }
     return (
-      <div className="min-h-dvh w-full bg-gray-900 flex items-center justify-center text-blue-500">
-        <div className="h-full flex flex-col items-center gap-10">
+      <div className="min-h-dvh w-full bg-gray-900 flex flex-1 items-center justify-center text-blue-500 max-sm:text-[13px]">
+        <div className="h-full flex  flex-1 flex-col items-center gap-10">
           <div className="text-center space-y-3">
-            <div className="w-12 h-12 bg-blue-950 rounded-full mx-auto flex items-center justify-center"> 
-              <MessageSquare className="text-blue-300"/>
+            <div className="w-12 h-12 max-sm:size-8 bg-blue-950 rounded-full mx-auto flex  flex-1 items-center justify-center"> 
+              <MessageSquare className="text-blue-300 size-6 max-sm:size-4"/>
             </div>
             <h2>Login</h2>
             <p>Get start with your free account</p>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col gap-5"> 
+            <div className="w-full flex flex-col gap-5"> 
                 
                 <div className="pr-2 border-blue-300 border-b-[1px] w-auto flex items-center px-1"> 
                   <Mail className="size-3.5 text-blue-200"/>
@@ -49,15 +49,17 @@ const LoginPage = () => {
                   onChange={(e)=>setFormData({...formData,email:e.target.value})}
                   /> 
                 </div> 
-                <div className="pr-2 border-blue-300 border-b-[1px] w-auto flex items-center px-1"> 
-                  <Lock className="size-3.5 text-blue-200"/>
-                  <input
-                  className="outline-none border-none px-2 py-0.5 text-white"
-                  type={showPassword? "text":"password"} 
-                  placeholder="password"
-                  value={formData.password}
-                  onChange={(e)=>setFormData({...formData,password:e.target.value})}
-                  />
+                <div className="pr-2 border-blue-300 border-b-[1px] w-auto flex items-center justify-between px-1"> 
+                  <div className="flex items-center">
+                    <Lock className="size-3.5 text-blue-200"/>
+                    <input
+                    className="outline-none border-none px-2 py-0.5 text-white"
+                    type={showPassword? "text":"password"} 
+                    placeholder="password"
+                    value={formData.password}
+                    onChange={(e)=>setFormData({...formData,password:e.target.value})}
+                    />
+                  </div>
                   <div className="cursor-pointer" onClick={()=>{setShowPassword(!showPassword)}}>
                   {
                     showPassword ? 
