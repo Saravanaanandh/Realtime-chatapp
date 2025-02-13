@@ -79,7 +79,7 @@ const SendMessage = () => {
             )}
 
         </div>
-        <form className="w-full  bg-gray-600 flex h-[4vh] gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
+        <form className="w-full  bg-gray-600 flex h-auto gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
             <div>
                 <button
                     type='button'

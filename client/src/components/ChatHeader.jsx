@@ -10,7 +10,7 @@ const ChatHeader = () => {
     const {onlineUsers} = useAuthStore()
   return (
     <div> 
-        <div className="h-[7vh] flex justify-between items-center border-b-[1px] border-b-blue-400 px-2 py-1">
+        <div className="h-auto flex justify-between items-center border-b-[1px] border-b-blue-400 px-2 py-1">
             <div className="flex gap-3 items-center justify-center max-sm:gap-1">
                 <div className='min-w-6'>
                     <img 

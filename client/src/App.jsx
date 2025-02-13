@@ -20,7 +20,7 @@ function App() {
 
   if(isCheckAuth && !authUser){
     return (
-      <div className=' flex items-center justify-center h-full bg-black text-white'>
+      <div className=' flex items-center justify-center h-svh bg-black text-white'>
         <Loader className='size-10 animate-spin'/>
       </div>
     )

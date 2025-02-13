@@ -1,7 +1,7 @@
 
 import useChatStore from "../store/useChatStore.jsx"
 import useAuthStore from "../store/useAuthStore.jsx"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef,useState } from "react"
 import ChatHeader from "./ChatHeader.jsx"
 import SendMessage from "./SendMessage.jsx"
 import defaultImg from "./../assets/user.png"
@@ -29,24 +29,24 @@ const Chat = () => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   },[messages])
 
-  // const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
-  // useEffect(() => {
-  //   const handleResize = () => setWindowHeight(window.innerHeight);
+  useEffect(() => {
+    const handleResize = () => setWindowHeight(window.innerHeight);
     
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
 
   return (
-    <div className="w-full h-full flex flex-col justify-between">
+    <div className={`w-full h-${windowHeight} flex flex-col justify-between"`}>
       <div className="">
         <ChatHeader /> 
       </div>
       <div className="h-full overflow-y-scroll">
         {/* max-sm:h-[23.4rem] */}
-        <div className={`w-full h-[79vh] space-y-1 px-2 mt-1 max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
+        <div className={`w-full h-full space-y-1 px-2 mt-1 max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
           {
             messages.map(message => (
               message.senderId === authUser._id ? (
