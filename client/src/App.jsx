@@ -20,13 +20,13 @@ function App() {
 
   if(isCheckAuth && !authUser){
     return (
-      <div className=' flex items-center justify-center h-screen bg-black text-white'>
+      <div className=' flex items-center justify-center h-full bg-black text-white'>
         <Loader className='size-10 animate-spin'/>
       </div>
     )
   }
   return (
-    <div className='poppins-regular'> 
+    <div className='poppins-regular h-[100vh]'> 
       <Navbar/> 
       <Routes>
         <Route path='/' element={authUser ? <HomePage/> : <Navigate to='/login'/>}/>
