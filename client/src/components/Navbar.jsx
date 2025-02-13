@@ -6,7 +6,7 @@ const Navbar = () => {
   const {authUser,logout} = useAuthStore()
  
   return (
-    <div className="flex items-center justify-between px-8 py-4 bg-gray-900 text-blue-400 border-b-2 shadow-lg shadow-blue-400/40 z-20">
+    <div className="flex items-center justify-between px-8 py-4 bg-gray-900 max-sm:px-4 max-sm:py-2 text-blue-400 border-b-2 shadow-sm shadow-blue-400/40 z-20">
       <Link to={'/'}>
         <div className="flex items-center gap-2 cursor-pointer">
           <MessageSquare className="max-sm:size-[16px]"/>

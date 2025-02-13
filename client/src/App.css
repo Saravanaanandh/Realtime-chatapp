@@ -9,9 +9,20 @@
 }
 
 #sidebar::-webkit-scrollbar{
-    width: 2px;  
+    scroll-behavior: smooth;
+    width: 1px;  
+    height: 4px;
+    border-radius: 4px;
 }
 
+#sidebar::-webkit-scrollbar-thumb{
+  background-color: #00c3ff; 
+  color: rgb(0, 136, 255);
+}
+#sidebar::-webkit-scrollbar-corner{ 
+
+  color: rgb(0, 136, 255);
+}
 #sidebar::-webkit-scrollbar-button{
     color: rgb(0, 136, 255);
 }
@@ -21,7 +32,7 @@
 #sidebar::-webkit-scrollbar-track-piece{
     color: rgb(0, 136, 255);
 }
-
+scroll
 .emoji-picker {
     transform: scale(0.8); /* Reduce size */ 
 }

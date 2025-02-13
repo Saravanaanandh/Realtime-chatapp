@@ -27,9 +27,9 @@ const LoginPage = () => {
     if(success === true) login(formData)  
   }
     return (
-      <div className="min-h-dvh w-full bg-gray-900 flex flex-1 items-center justify-center text-blue-500 max-sm:text-[13px]">
-        <div className="h-full flex  flex-1 flex-col items-center gap-10">
-          <div className="text-center space-y-3">
+      <div className="min-h-screen pt-1 w-full bg-gray-900 flex flex-1 items-center justify-center text-blue-500 max-sm:text-[12px] overflow-hidden">
+        <div className="h-full flex  flex-1 flex-col items-center justify-center overflow-y-scroll  gap-10 max-sm:gap-5">
+          <div className="text-center space-y-3 max-sm:space-y-1">
             <div className="w-12 h-12 max-sm:size-8 bg-blue-950 rounded-full mx-auto flex  flex-1 items-center justify-center"> 
               <MessageSquare className="text-blue-300 size-6 max-sm:size-4"/>
             </div>
@@ -37,23 +37,23 @@ const LoginPage = () => {
             <p>Get start with your free account</p>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="w-full flex flex-col gap-5"> 
+            <div className="w-5/5 flex flex-col items-center justify-center gap-5"> 
                 
-                <div className="pr-2 border-blue-300 border-b-[1px] w-auto flex items-center px-1"> 
-                  <Mail className="size-3.5 text-blue-200"/>
+                <div className="pr-2 border-blue-300 border-b-[1px] w-auto flex gap-1 items-center px-1 sm:gap-2"> 
+                  <Mail className="size-3.5 text-blue-200 max-sm:size-3"/>
                   <input
-                  className="outline-none border-none px-2 py-0.5 text-white"
+                  className="outline-none border-none py-0.5 text-white"
                   type="email" 
                   placeholder="email"
                   value={formData.email}
                   onChange={(e)=>setFormData({...formData,email:e.target.value})}
                   /> 
                 </div> 
-                <div className="pr-2 border-blue-300 border-b-[1px] w-auto flex items-center justify-between px-1"> 
-                  <div className="flex items-center">
-                    <Lock className="size-3.5 text-blue-200"/>
+                <div className=" border-blue-300 border-b-[1px] w-auto flex  items-center justify-between "> 
+                  <div className="flex items-center gap-1 ">
+                    <Lock className="size-3.5 text-blue-200 max-sm:size-3"/>
                     <input
-                    className="outline-none border-none px-2 py-0.5 text-white"
+                    className="outline-none border-none py-0.5 text-white"
                     type={showPassword? "text":"password"} 
                     placeholder="password"
                     value={formData.password}
@@ -68,7 +68,7 @@ const LoginPage = () => {
                   </div>
                 </div>  
               <button 
-                className="mt-2 cursor-pointer w-60 border-[1px] rounded-[5px] py-1 text-amber-400 hover:bg-amber-300 hover:text-black transition-colors duration-200" 
+                className="mt-2 cursor-pointer w-5/5 border-[1px] rounded-[5px] py-1 text-amber-400 hover:bg-amber-300 hover:text-black transition-colors duration-200" 
                 type="submit" 
                 onClick={handleSubmit}
               >
@@ -76,7 +76,7 @@ const LoginPage = () => {
               </button>
             </div>
           </form>
-          <div>
+          <div className="text-[10px] sm:text-[16px]">
             <p>Create an Account?
             <Link to="/signup"><span className="underline"> signup</span></Link>
             </p>
