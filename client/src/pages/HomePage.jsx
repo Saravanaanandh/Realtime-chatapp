@@ -10,10 +10,10 @@ const HomePage = () => {
   
   
   return (
-    <div className={`flex items-center justify-center w-full h-full bg-gray-900 py-5`}>
-      <div  className={`max-w-[900px] h-full flex flex-1 mx-5 bg-gray-800 rounded-2xl border-[1px] border-blue-400  rounded-bl-sm rounded-tl-sm`}>
+    <div className={`flex items-center justify-center w-full  h-full bg-gray-900 py-5`}>
+      <div  className={`max-w-[900px] h-full overflow-y-hidden flex flex-1 mx-5 bg-gray-800 rounded-2xl border-[1px] border-blue-400  rounded-bl-md rounded-tl-md`}>
         <div className="flex flex-col h-full overflow-y-scroll" id="sidebar">
-          <Sidebar/>
+          <Sidebar className=""/>
         </div>
         <div className="flex flex-1">
           {
