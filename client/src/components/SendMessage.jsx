@@ -59,8 +59,8 @@ const SendMessage = () => {
     }
 
   return (
-    <div className="w-dvw">
-        <div className="w-full ml-[15%]">
+    <div className="w-dvw ">
+        <div className="w-full">
             {imagePre && (
                 <div className="relative inline-block"> 
                     <img 
@@ -79,7 +79,7 @@ const SendMessage = () => {
             )}
 
         </div>
-        <form className="w-auto max-[300px]:ml-[15%]  max-[350px]:ml-[13%]  ml-[15%] mr-1 bg-gray-600 flex h-auto gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
+        <form className="w-auto mr-[4vw] bg-gray-600 flex h-auto gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
             <div>
                 <button
                     type='button'

@@ -49,9 +49,9 @@ const Chat = () => {
       <div className="max-sm:sticky max-sm:top-0">
         <ChatHeader /> 
       </div>
-      <div className={`h-full overflow-y-scroll`} id="messagescroll">
+      <div className={`h-full overflow-y-scroll mb-[5vh]`} id="messagescroll">
         {/* max-sm:h-[23.4rem] */}
-        <div className={`w-full h-${windowHeight} space-y-1 px-2 mt-1 max-sm:text-[14px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
+        <div className={`w-full h-${windowHeight} space-y-1 px-2 mt-1`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
           {
             messages.map(message => (
               message.senderId === authUser._id ? (
@@ -75,7 +75,7 @@ const Chat = () => {
                       )
                     }
                     <div className="text-wrap px-1 max-sm:px-0.5"><p>{message.text}</p></div>
-                    <time className="text-nowrap text-[10px] px-1 max-sm:px-0.5 max-sm:text-[7px] text-black">
+                    <time className="text-nowrap text-[0.5rem] px-1 max-sm:px-0.5 text-black">
                       {timeFormatType(message.createdAt)}
                     </time>
                   </div>
@@ -119,7 +119,7 @@ const Chat = () => {
                       )
                     }
                     <div className="text-wrap  px-1 max-sm:px-0.5"><p>{message.text}</p></div>
-                    <time className="text-nowrap px-1 max-sm:px-0.5 text-[8px] max-sm:text-[5px] text-black">
+                    <time className="text-nowrap px-1 max-sm:px-0.5 text-[0.5rem] text-black">
                       {timeFormatType(message.createdAt)}
                     </time>
                   </div>
@@ -131,7 +131,7 @@ const Chat = () => {
           <div ref={messageEndRef}/>
         </div>
       </div>
-      <div className="max-sm:fixed max-sm:bottom-0 max-sm:left-[0%]"> 
+      <div className="max-sm:fixed max-sm:-bottom-1 max-sm:left-[2vw]"> 
        <SendMessage />
       </div>
     </div>
