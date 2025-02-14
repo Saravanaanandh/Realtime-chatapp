@@ -46,7 +46,7 @@ const Chat = () => {
 
   return (
     <div className={`w-full h-${windowHeight} flex flex-col justify-between"`}>
-      <div className="sticky top-0">
+      <div className="max-sm:sticky max-sm:top-0">
         <ChatHeader /> 
       </div>
       <div className={`h-full overflow-y-scroll`} id="messagescroll">
@@ -131,7 +131,9 @@ const Chat = () => {
           <div ref={messageEndRef}/>
         </div>
       </div>
-      <SendMessage />
+      <div className="max-sm:fixed max-sm:bottom-0 max-sm:left-[0%]"> 
+       <SendMessage />
+      </div>
     </div>
   )
 }

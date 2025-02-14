@@ -13,7 +13,7 @@ const HomePage = () => {
     <div className={`flex items-center justify-center w-full  h-full bg-gray-900 py-1`} >
       <div  className={`max-w-[900px] h-full overflow-y-hidden flex flex-1 mx-1 bg-gray-800 rounded-2xl border-[1px] border-blue-400  rounded-bl-md rounded-tl-md`}>
         <div className="h-full overflow-y-scroll" id="sidebar">
-          <div className="sticky top-0 h-full" >
+          <div className="h-full max-sm:sticky max-sm:top-0" >
             <Sidebar />
           </div>
         </div>
