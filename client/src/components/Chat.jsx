@@ -13,8 +13,9 @@ import './../App.css'
 const Chat = () => {
 
   const {messages,getMessages,selectedUser,setShowEmojiPicker,subscribeToMessages,unSubscribeFromMessages} = useChatStore()
-  const {authUser} = useAuthStore()
-  const messageEndRef = useRef(null)
+  const {authUser,keyboardFocus} = useAuthStore()
+  const messageEndRef = useRef(null) 
+
 
   useEffect(()=>{
     getMessages(selectedUser._id)
@@ -34,6 +35,8 @@ const Chat = () => {
   useEffect(() => {
     const handleResize = () => setWindowHeight(window.innerHeight);
     
+    if(keyboardFocus) handleResize();
+
     window.addEventListener("focus",handleResize)
 
     window.addEventListener("resize", handleResize);

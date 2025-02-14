@@ -12,7 +12,10 @@ const useChatStore = create((set,get)=>({
     isUsersLoading:false,
     isMessageLoading:false,
     showEmojiPicker:false,
-
+    keyboardFocus:false, 
+    setKeyboardFocus:(data)=>{
+        set({keyboardFocus:data})
+    },
 
     setShowEmojiPicker:(bool)=>{ 
         set({showEmojiPicker:bool})

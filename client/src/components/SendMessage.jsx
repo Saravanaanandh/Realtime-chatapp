@@ -7,7 +7,7 @@ import './../App.css'
 
 const SendMessage = () => {
 
-    const {sendmessage,showEmojiPicker, setShowEmojiPicker} = useChatStore()
+    const {sendmessage,setKeyboardFocus,showEmojiPicker, setShowEmojiPicker} = useChatStore()
 
     const [imagePre, setImagePre] = useState(null)
     const [text, setText] = useState('') 
@@ -107,6 +107,7 @@ const SendMessage = () => {
                 ref={inputRef}
                 placeholder="Type something to send..."
                 value={text}
+                onFocus={()=>setKeyboardFocus(true)}
                 onChange={(e)=>setText(e.target.value)}
             />
             <div className="flex gap-1"> 
