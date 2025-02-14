@@ -34,6 +34,8 @@ const Chat = () => {
   useEffect(() => {
     const handleResize = () => setWindowHeight(window.innerHeight);
     
+    window.addEventListener("focus",handleResize)
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -44,9 +46,9 @@ const Chat = () => {
       <div className="">
         <ChatHeader /> 
       </div>
-      <div className="h-full overflow-y-scroll">
+      <div className={`h-full overflow-y-scroll`} id="messagescroll">
         {/* max-sm:h-[23.4rem] */}
-        <div className={`w-full h-full space-y-1 px-2 mt-1 max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
+        <div className={`w-full h-${windowHeight} space-y-1 px-2 mt-1 max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
           {
             messages.map(message => (
               message.senderId === authUser._id ? (
