@@ -26,7 +26,7 @@ function App() {
     )
   }
   return (
-    <div className='poppins-regular h-svh flex flex-col'> 
+    <div className='poppins-regular h-svh flex flex-col bg-gray-900'> 
       <Navbar/> 
       <Routes>
         <Route path='/' element={authUser ? <HomePage/> : <Navigate to='/login'/>}/>
