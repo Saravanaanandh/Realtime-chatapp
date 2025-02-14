@@ -10,6 +10,11 @@
 #messagescroll::-webkit-scrollbar{
   width: 0;
 }
+
+#chatty::-webkit-scrollbar{
+  width: 0; 
+} 
+
 #sidebar::-webkit-scrollbar{
     scroll-behavior: smooth;
     width: 1px;  

@@ -46,7 +46,7 @@ const Chat = () => {
 
   return (
     <div className={`w-full h-${windowHeight} flex flex-col justify-between"`}>
-      <div className="">
+      <div className="sticky top-0">
         <ChatHeader /> 
       </div>
       <div className={`h-full overflow-y-scroll`} id="messagescroll">
