@@ -31,8 +31,8 @@ const SignUpPage = () => {
       if(success === true) signup(formData)  
     }
     return (
-      <div className="min-h-svh w-full pt-2 bg-gray-900 flex items-center justify-center text-blue-500 max-sm:text-[12px]">
-        <div className="h-full flex flex-col items-center gap-10 max-sm:gap-5">
+      <div className="min-h-screen w-full pt-2 bg-gray-900 flex flex-1 items-center justify-center text-blue-500 max-sm:text-[12px]">
+        <div className="h-full flex flex-col justify-center items-center gap-10 max-sm:gap-5">
           <div className="text-center space-y-3 max-sm:space-y-1">
             <div className="w-12 h-12 max-sm:size-8 bg-blue-950 rounded-full mx-auto flex items-center justify-center"> 
               <MessageSquare className="text-blue-300 size-4 sm:size-6"/>

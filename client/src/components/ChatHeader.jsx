@@ -19,9 +19,9 @@ const ChatHeader = () => {
                     alt="profile" 
                     /> 
                 </div> 
-                <div className="text-start text-[14px] text-white max-sm:text-[13px]">
+                <div className="text-start text-white max-sm:text-[13px]">
                 <p className='w-auto max-sm:max-w-[15ch] overflow-hidden'>{selectedUser.username}</p>
-                <p className={`text-[14px] max-sm:text-[10px] ${onlineUsers.includes(selectedUser._id)?"text-green-400":"text-gray-500"}`}>{onlineUsers.includes(selectedUser._id)?"online":"offline"}</p>
+                <p className={`text-[12px] max-sm:text-[10px] ${onlineUsers.includes(selectedUser._id)?"text-green-400":"text-gray-500"}`}>{onlineUsers.includes(selectedUser._id)?"online":"offline"}</p>
                 </div> 
             </div>
             <div className=" rounded-full bg-gray-600 p-0.5 cursor-pointer">
