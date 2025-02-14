@@ -41,7 +41,7 @@ const Chat = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [keyboardFocus]);
 
 
   return (
@@ -51,7 +51,7 @@ const Chat = () => {
       </div>
       <div className={`h-full overflow-y-scroll`} id="messagescroll">
         {/* max-sm:h-[23.4rem] */}
-        <div className={`w-full h-${windowHeight} space-y-1 px-2 mt-1 max-sm:text-[10px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
+        <div className={`w-full h-${windowHeight} space-y-1 px-2 mt-1 max-sm:text-[14px]`} id="chatContainer" onClick={(e)=>{e.preventDefault();setShowEmojiPicker(false)}}>
           {
             messages.map(message => (
               message.senderId === authUser._id ? (
@@ -62,26 +62,26 @@ const Chat = () => {
                 <div
                   className="flex gap-1"
                 >
-                  <div className="bg-blue-500 text-white max-w-[400px] rounded-md p-0.5 -space-y-2 overflow-x-hidden max-sm:max-w-[150px] max-sm:-space-y-1">
+                  <div className="bg-blue-500 text-white max-w-[400px] rounded-md p-0.5 -space-y-2 overflow-x-hidden max-sm:max-w-[160px] max-sm:-space-y-1">
                     {
                       message.image && (
                         <div>
                           <img 
                             src={message.image}
-                            className="max-w-[150px] max-h-[150px] rounded-md max-sm:max-w-[100px] max-sm:max-h-[100px]" 
+                            className="max-w-[180px] max-h-[180px] rounded-md max-sm:max-w-[130px] max-sm:max-h-[130px]" 
                             alt="" 
                           />
                         </div>
                       )
                     }
                     <div className="text-wrap px-1 max-sm:px-0.5"><p>{message.text}</p></div>
-                    <time className="text-nowrap text-[8px] px-1 max-sm:px-0.5 max-sm:text-[5px] text-black">
+                    <time className="text-nowrap text-[10px] px-1 max-sm:px-0.5 max-sm:text-[7px] text-black">
                       {timeFormatType(message.createdAt)}
                     </time>
                   </div>
                   <div className="min-w-3">
                     <img 
-                      className="size-5 rounded-full object-cover object-center max-sm:size-3"
+                      className="size-7 rounded-full object-cover object-center max-sm:size-5"
                       src={message.senderId === authUser._id 
                         ? authUser.profilePic || defaultImg 
                         : selectedUser.profilePic || defaultImg} 
@@ -100,19 +100,19 @@ const Chat = () => {
                 >
                   <div className="min-w-3">
                     <img 
-                      className="size-5 rounded-full object-cover object-center max-sm:size-3"
+                      className="size-7 rounded-full object-cover object-center max-sm:size-5"
                       src={message.senderId === authUser._id 
                         ? authUser.profilePic || defaultImg 
                         : selectedUser.profilePic || defaultImg} 
                       alt="" />
                   </div>
-                  <div className="bg-gray-600 text-white max-w-[400px] rounded-md p-0.5 -space-y-2 overflow-x-hidden max-sm:max-w-[150px] max-sm:-space-y-1">
+                  <div className="bg-gray-600 text-white max-w-[400px] rounded-md p-0.5 -space-y-2 overflow-x-hidden max-sm:max-w-[160px] max-sm:-space-y-1">
                     {
                       message.image && (
                         <div>
                           <img 
                             src={message.image}
-                            className="max-w-[150px] max-h-[150px] rounded-md max-sm:max-w-[100px] max-sm:max-h-[100px]" 
+                            className="max-w-[180px] max-h-[180px] rounded-md max-sm:max-w-[130px] max-sm:max-h-[130px]" 
                             alt="" 
                           />
                         </div>
