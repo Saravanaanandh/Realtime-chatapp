@@ -79,14 +79,14 @@ const SendMessage = () => {
             )}
 
         </div>
-        <form className="w-full  bg-gray-600 flex h-[4vh] gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
+        <form className="w-full  bg-gray-600 flex h-auto gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
             <div>
                 <button
                     type='button'
                     className="cursor-pointer flex items-center justify-center"
                     onClick={()=>setShowEmojiPicker(!showEmojiPicker)}
                 >
-                    <Smile className={`${showEmojiPicker ? 'text-white':''} size-5 max-sm:size-3`}/>
+                    <Smile className={`${showEmojiPicker ? 'text-white':''} size-5 max-sm:size-4`}/>
                 </button>
                 {
                     showEmojiPicker && (
@@ -109,7 +109,7 @@ const SendMessage = () => {
                 value={text}
                 onChange={(e)=>setText(e.target.value)}
             />
-            <div className="flex gap-1"> 
+            <div className="flex gap-2 max-sm:gap-1.5 pr-2 max-sm:pr-1.5"> 
                 <input 
                     type="file" 
                     accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
@@ -123,7 +123,7 @@ const SendMessage = () => {
                     className="cursor-pointer"
                     onClick={()=>fileInputRef.current?.click()}
                 >
-                    <Image className={` ${imagePre ? 'text-green-500' : ''} size-4 max-sm:size-3`}/>
+                    <Image className={` ${imagePre ? 'text-green-500' : ''} size-5 max-sm:size-4`}/>
                 </button>
 
                 <button
@@ -131,7 +131,7 @@ const SendMessage = () => {
                     className={`${!text.trim() && !imagePre ? 'disabled cursor-not-allowed':'cursor-pointer'} `}
                     onClick={handleSendMessage}
                 >
-                    <Send className={`${imagePre || text ? 'text-blue-500' : ''} size-4 max-sm:size-3`}/>
+                    <Send className={`${imagePre || text ? 'text-blue-500' : ''} size-5 max-sm:size-4`}/>
                 </button>
             </div>
         </form>
