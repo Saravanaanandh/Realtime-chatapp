@@ -7,7 +7,7 @@ import './../App.css'
 
 const SendMessage = () => {
 
-    const {sendmessage,setKeyboardFocus,showEmojiPicker, setShowEmojiPicker} = useChatStore()
+    const {sendmessage,showEmojiPicker, setShowEmojiPicker} = useChatStore()
 
     const [imagePre, setImagePre] = useState(null)
     const [text, setText] = useState('') 
@@ -59,12 +59,12 @@ const SendMessage = () => {
     }
 
   return (
-    <div className="w-dvw ">
-        <div className="w-full">
+    <div className="w-full space-y-1 ">
+        <div>
             {imagePre && (
                 <div className="relative inline-block"> 
                     <img 
-                        className="w-20 h-20 object-cover object-center rounded-xl max-sm:w-13 max-sm:h-13"
+                        className="w-20 h-20 object-cover object-center rounded-xl max-sm:w-10 max-sm:h-10"
                         src={imagePre} 
                         alt="" 
                     />  
@@ -79,7 +79,7 @@ const SendMessage = () => {
             )}
 
         </div>
-        <form className="w-auto mr-[4vw] bg-gray-600 flex h-auto gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
+        <form className="w-full  bg-gray-600 flex h-[4vh] gap-2 justify-between items-center relative rounded-2xl mb-1 px-1.5" onSubmit={handleSendMessage}>
             <div>
                 <button
                     type='button'
@@ -107,7 +107,6 @@ const SendMessage = () => {
                 ref={inputRef}
                 placeholder="Type something to send..."
                 value={text}
-                onFocus={()=>setKeyboardFocus(true)}
                 onChange={(e)=>setText(e.target.value)}
             />
             <div className="flex gap-1"> 
