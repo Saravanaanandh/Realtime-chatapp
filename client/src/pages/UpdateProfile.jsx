@@ -23,7 +23,7 @@ const UpdateProfile = () => {
 
     }
     return (
-      <div className="w-full flex items-center justify-center bg-gray-900  text-blue-500 py-5 max-sm:text-[0.9rem]">
+      <div className="w-full h-dvh flex items-center justify-center bg-gray-900  text-blue-500 py-5 max-sm:text-[0.9rem]">
         <div className="max-w-[500px] h-full flex flex-1 mx-5 p-3 bg-gray-800 rounded-2xl flex-col md:px-10">  
           <div>
             <div className="text-center">
